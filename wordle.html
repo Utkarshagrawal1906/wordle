@@ -1,0 +1,376 @@
+<html>
+    <head>
+        <title>Wordle game</title>
+        <link rel="stylesheet" href="C:\Users\Dell\OneDrive\Desktop\git-test\Bootstrap4\conFusion\node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <style>
+        .hdr{
+    align-items: center;
+}
+.lst{
+    font-size: 35px;
+}
+.big{
+    width: 1em;
+    height: 1em;
+}
+form{
+    font-size: medium;
+}
+#wd,#kb{
+    display: block;
+}
+#w11, #w12, #w13, #w14, #w15,#w21, #w22, #w23, #w24, #w25,#w31, #w32, #w33, #w34, #w35,#w41, #w42, #w43, #w44, #w45,#w51, #w52, #w53, #w54, #w55{
+    display: inline-block;
+    background-color: rgb(210, 199, 199);
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+#q, #w, #e,#r,#t,#y,#u,#i,#o,#p,#a,#s,#d,#f,#g,#h,#j,#k,#l,#z,#x,#c,#v,#b,#n,#m{
+    display: inline-block;
+    background-color: rgb(161, 192, 221);
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+#bks,#enter{
+    display: inline-block;
+    background-color: rgb(161, 192, 221);
+    height: 50px;
+}
+footer{
+    background-color: aquamarine;
+}
+    </style>
+        <script>
+            var p=11;
+            document.addEventListener("keydown",ky);
+            function ky(event){
+                var cd=event.keyCode;
+                if(cd==8)
+                clr();
+                else
+                {var a=String.fromCharCode(cd);
+                a=a.toUpperCase();
+                if(cd==13)
+                chng();
+               else if(a>='A'&&a<='Z')
+                wrt(a,cd);}
+            }
+            function chng(){
+                if(p==16)
+            {p=21;s=0;
+            if(document.getElementById("w11").innerHTML=='P')
+            {document.getElementById("w11").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w11").innerHTML=='O'||document.getElementById("w11").innerHTML=='W'||document.getElementById("w11").innerHTML=='E'||document.getElementById("w11").innerHTML=='R')
+            document.getElementById("w11").style.backgroundColor="orange";
+            if(document.getElementById("w12").innerHTML=='O')
+            {document.getElementById("w12").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w12").innerHTML=='P'||document.getElementById("w12").innerHTML=='W'||document.getElementById("w12").innerHTML=='E'||document.getElementById("w12").innerHTML=='R')
+            document.getElementById("w12").style.backgroundColor="orange";
+            if(document.getElementById("w13").innerHTML=='W')
+            {document.getElementById("w13").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w13").innerHTML=='O'||document.getElementById("w13").innerHTML=='P'||document.getElementById("w13").innerHTML=='E'||document.getElementById("w13").innerHTML=='R')
+            document.getElementById("w13").style.backgroundColor="orange";
+            if(document.getElementById("w14").innerHTML=='E')
+            {document.getElementById("w14").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w14").innerHTML=='O'||document.getElementById("w14").innerHTML=='W'||document.getElementById("w14").innerHTML=='P'||document.getElementById("w14").innerHTML=='R')
+            document.getElementById("w14").style.backgroundColor="orange";
+            if(document.getElementById("w15").innerHTML=='R')
+            {document.getElementById("w15").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w15").innerHTML=='O'||document.getElementById("w15").innerHTML=='W'||document.getElementById("w15").innerHTML=='E'||document.getElementById("w15").innerHTML=='P')
+            document.getElementById("w15").style.backgroundColor="orange";
+        if(s==5)
+        {document.getElementById("hdng").innerHTML="You got it Correct";
+p=70;}}
+            else if(p==26)
+            {p=31;s=0;
+            if(document.getElementById("w21").innerHTML=='P')
+            {document.getElementById("w21").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w21").innerHTML=='O'||document.getElementById("w21").innerHTML=='W'||document.getElementById("w21").innerHTML=='E'||document.getElementById("w21").innerHTML=='R')
+            document.getElementById("w21").style.backgroundColor="orange";
+            if(document.getElementById("w22").innerHTML=='O')
+            {document.getElementById("w22").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w22").innerHTML=='P'||document.getElementById("w22").innerHTML=='W'||document.getElementById("w22").innerHTML=='E'||document.getElementById("w22").innerHTML=='R')
+            document.getElementById("w22").style.backgroundColor="orange";
+            if(document.getElementById("w23").innerHTML=='W')
+            {document.getElementById("w23").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w23").innerHTML=='O'||document.getElementById("w23").innerHTML=='P'||document.getElementById("w23").innerHTML=='E'||document.getElementById("w23").innerHTML=='R')
+            document.getElementById("w23").style.backgroundColor="orange";
+            if(document.getElementById("w24").innerHTML=='E')
+            {document.getElementById("w24").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w24").innerHTML=='O'||document.getElementById("w24").innerHTML=='W'||document.getElementById("w24").innerHTML=='P'||document.getElementById("w24").innerHTML=='R')
+            document.getElementById("w24").style.backgroundColor="orange";
+            if(document.getElementById("w25").innerHTML=='R')
+            {document.getElementById("w25").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w25").innerHTML=='O'||document.getElementById("w25").innerHTML=='W'||document.getElementById("w25").innerHTML=='E'||document.getElementById("w25").innerHTML=='P')
+            document.getElementById("w25").style.backgroundColor="orange";
+        if(s==5)
+        {document.getElementById("hdng").innerHTML="You got it Correct";
+p=70;}}
+            else if(p==36)
+            {p=41;s=0;
+            if(document.getElementById("w31").innerHTML=='P')
+            {document.getElementById("w31").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w31").innerHTML=='O'||document.getElementById("w31").innerHTML=='W'||document.getElementById("w31").innerHTML=='E'||document.getElementById("w31").innerHTML=='R')
+            document.getElementById("w31").style.backgroundColor="orange";
+            if(document.getElementById("w32").innerHTML=='O')
+            {document.getElementById("w32").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w32").innerHTML=='P'||document.getElementById("w32").innerHTML=='W'||document.getElementById("w32").innerHTML=='E'||document.getElementById("w32").innerHTML=='R')
+            document.getElementById("w32").style.backgroundColor="orange";
+            if(document.getElementById("w33").innerHTML=='W')
+            {document.getElementById("w33").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w33").innerHTML=='O'||document.getElementById("w33").innerHTML=='P'||document.getElementById("w33").innerHTML=='E'||document.getElementById("w33").innerHTML=='R')
+            document.getElementById("w33").style.backgroundColor="orange";
+            if(document.getElementById("w34").innerHTML=='E')
+            {document.getElementById("w34").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w34").innerHTML=='O'||document.getElementById("w34").innerHTML=='W'||document.getElementById("w34").innerHTML=='P'||document.getElementById("w34").innerHTML=='R')
+            document.getElementById("w34").style.backgroundColor="orange";
+            if(document.getElementById("w35").innerHTML=='R')
+            {document.getElementById("w35").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w35").innerHTML=='O'||document.getElementById("w35").innerHTML=='W'||document.getElementById("w35").innerHTML=='E'||document.getElementById("w35").innerHTML=='P')
+            document.getElementById("w35").style.backgroundColor="orange";
+        if(s==5)
+    {document.getElementById("hdng").innerHTML="You got it Correct";
+p=70;}}
+            else if(p==46)
+            {p=51;s=0;
+            if(document.getElementById("w41").innerHTML=='P')
+            {document.getElementById("w41").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w41").innerHTML=='O'||document.getElementById("w41").innerHTML=='W'||document.getElementById("w41").innerHTML=='E'||document.getElementById("w41").innerHTML=='R')
+            document.getElementById("w41").style.backgroundColor="orange";
+            if(document.getElementById("w42").innerHTML=='O')
+            {document.getElementById("w42").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w42").innerHTML=='P'||document.getElementById("w42").innerHTML=='W'||document.getElementById("w42").innerHTML=='E'||document.getElementById("w42").innerHTML=='R')
+            document.getElementById("w42").style.backgroundColor="orange";
+            if(document.getElementById("w43").innerHTML=='W')
+            {document.getElementById("w43").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w43").innerHTML=='O'||document.getElementById("w43").innerHTML=='P'||document.getElementById("w43").innerHTML=='E'||document.getElementById("w43").innerHTML=='R')
+            document.getElementById("w43").style.backgroundColor="orange";
+            if(document.getElementById("w44").innerHTML=='E')
+            {document.getElementById("w44").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w44").innerHTML=='O'||document.getElementById("w44").innerHTML=='W'||document.getElementById("w44").innerHTML=='P'||document.getElementById("w44").innerHTML=='R')
+            document.getElementById("w44").style.backgroundColor="orange";
+            if(document.getElementById("w45").innerHTML=='R')
+            {document.getElementById("w45").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w45").innerHTML=='O'||document.getElementById("w45").innerHTML=='W'||document.getElementById("w45").innerHTML=='E'||document.getElementById("w45").innerHTML=='P')
+            document.getElementById("w45").style.backgroundColor="orange";
+        if(s==5)
+        {document.getElementById("hdng").innerHTML="You got it Correct";
+p=70;}}
+            else if(p==56)
+            {s=0;p=60;
+            if(document.getElementById("w51").innerHTML=='P')
+            {document.getElementById("w51").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w51").innerHTML=='O'||document.getElementById("w51").innerHTML=='W'||document.getElementById("w51").innerHTML=='E'||document.getElementById("w51").innerHTML=='R')
+            document.getElementById("w51").style.backgroundColor="orange";
+            if(document.getElementById("w52").innerHTML=='O')
+            {document.getElementById("w52").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w52").innerHTML=='P'||document.getElementById("w52").innerHTML=='W'||document.getElementById("w52").innerHTML=='E'||document.getElementById("w52").innerHTML=='R')
+            document.getElementById("w52").style.backgroundColor="orange";
+            if(document.getElementById("w53").innerHTML=='W')
+            {document.getElementById("w53").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w53").innerHTML=='O'||document.getElementById("w53").innerHTML=='P'||document.getElementById("w53").innerHTML=='E'||document.getElementById("w53").innerHTML=='R')
+            document.getElementById("w53").style.backgroundColor="orange";
+            if(document.getElementById("w54").innerHTML=='E')
+            {document.getElementById("w54").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w54").innerHTML=='O'||document.getElementById("w54").innerHTML=='W'||document.getElementById("w54").innerHTML=='P'||document.getElementById("w54").innerHTML=='R')
+            document.getElementById("w54").style.backgroundColor="orange";
+            if(document.getElementById("w55").innerHTML=='R')
+            {document.getElementById("w55").style.backgroundColor="Green";
+        s++;}
+            else if(document.getElementById("w55").innerHTML=='O'||document.getElementById("w55").innerHTML=='W'||document.getElementById("w55").innerHTML=='E'||document.getElementById("w55").innerHTML=='P')
+            document.getElementById("w55").style.backgroundColor="orange";
+        if(s==5)
+        {document.getElementById("hdng").innerHTML="You got it Correct";
+p=70;}}
+            }
+            function wrt(ps,cd){
+            if(p==11)
+                {document.getElementById("w11").innerHTML=ps;
+            p++;}
+            else if(p==12)
+            {document.getElementById("w12").innerHTML=ps;
+            p++;}
+            else if(p==13)
+            {document.getElementById("w13").innerHTML=ps;
+            p++;}
+            else if(p==14)
+            {document.getElementById("w14").innerHTML=ps;
+            p++;}
+            else if(p==15)
+            {document.getElementById("w15").innerHTML=ps;
+            p++;}
+           else if(p==21)
+                {document.getElementById("w21").innerHTML=ps;
+            p++;}
+            else if(p==22)
+            {document.getElementById("w22").innerHTML=ps;
+            p++;}
+            else if(p==23)
+            {document.getElementById("w23").innerHTML=ps;
+            p++;}
+            else if(p==24)
+            {document.getElementById("w24").innerHTML=ps;
+            p++;}
+            else if(p==25)
+            {document.getElementById("w25").innerHTML=ps;
+            p++;}
+           else if(p==31)
+                {document.getElementById("w31").innerHTML=ps;
+            p++;}
+            else if(p==32)
+            {document.getElementById("w32").innerHTML=ps;
+            p++;}
+            else if(p==33)
+            {document.getElementById("w33").innerHTML=ps;
+            p++;}
+            else if(p==34)
+            {document.getElementById("w34").innerHTML=ps;
+            p++;}
+            else if(p==35)
+            {document.getElementById("w35").innerHTML=ps;
+            p++;}
+           else if(p==41)
+                {document.getElementById("w41").innerHTML=ps;
+            p++;}
+            else if(p==42)
+            {document.getElementById("w42").innerHTML=ps;
+            p++;}
+            else if(p==43)
+            {document.getElementById("w43").innerHTML=ps;
+            p++;}
+            else if(p==44)
+            {document.getElementById("w44").innerHTML=ps;
+            p++;}
+            else if(p==45)
+            {document.getElementById("w45").innerHTML=ps;
+            p++;}
+           else if(p==51)
+                {document.getElementById("w51").innerHTML=ps;
+            p++;}
+            else if(p==52)
+            {document.getElementById("w52").innerHTML=ps;
+            p++;}
+            else if(p==53)
+            {document.getElementById("w53").innerHTML=ps;
+            p++;}
+            else if(p==54)
+            {document.getElementById("w54").innerHTML=ps;
+            p++;}
+            else if(p==55)
+            {document.getElementById("w55").innerHTML=ps;
+            p++;}
+            }
+           function clr(){
+               if(p==12)
+               document.getElementById("w11").innerHTML=null;
+               else if(p==13)
+               document.getElementById("w12").innerHTML=null;
+               else if(p==14)
+               document.getElementById("w13").innerHTML=null;
+               else if(p==15)
+               document.getElementById("w14").innerHTML=null;
+               else if(p==16)
+               document.getElementById("w15").innerHTML=null;
+               else if(p==22)
+               document.getElementById("w21").innerHTML=null;
+               else if(p==23)
+               document.getElementById("w22").innerHTML=null;
+               else if(p==24)
+               document.getElementById("w23").innerHTML=null;
+               else if(p==25)
+               document.getElementById("w24").innerHTML=null;
+               else if(p==26)
+               document.getElementById("w25").innerHTML=null;
+               else if(p==32)
+               document.getElementById("w31").innerHTML=null;
+               else if(p==33)
+               document.getElementById("w32").innerHTML=null;
+               else if(p==34)
+               document.getElementById("w33").innerHTML=null;
+               else if(p==35)
+               document.getElementById("w34").innerHTML=null;
+               else if(p==36)
+               document.getElementById("w35").innerHTML=null;
+               else if(p==42)
+               document.getElementById("w41").innerHTML=null;
+               else if(p==43)
+               document.getElementById("w42").innerHTML=null;
+               else if(p==44)
+               document.getElementById("w43").innerHTML=null;
+               else if(p==45)
+               document.getElementById("w44").innerHTML=null;
+               else if(p==46)
+               document.getElementById("w45").innerHTML=null;
+               else if(p==52)
+               document.getElementById("w51").innerHTML=null;
+               else if(p==53)
+               document.getElementById("w52").innerHTML=null;
+               else if(p==54)
+               document.getElementById("w53").innerHTML=null;
+               else if(p==55)
+               document.getElementById("w54").innerHTML=null;
+               else if(p==56)
+               document.getElementById("w55").innerHTML=null;
+               if(p%10>1)
+               p--;
+           }
+        </script>
+    </head>
+    <body>
+        <header class="jumbotron">
+            <div class="container">
+                <div class="hdr">
+                <div class="row row-header"><h1>Wordle Game</h1></div></div></div></header>
+                <h3 align="center" id="hdng">Try to guess the correct word, You Have 5 Chances</h3><br>
+        <div align="center" id="wd">
+            <div id="w11"></div> <div id="w12"></div> <div id="w13"></div> <div id="w14"></div> <div id="w15"></div><br><br>
+            <div id="w21"></div> <div id="w22"></div> <div id="w23"></div> <div id="w24"></div> <div id="w25"></div><br><br>
+            <div id="w31"></div> <div id="w32"></div> <div id="w33"></div> <div id="w34"></div> <div id="w35"></div><br><br>
+            <div id="w41"></div> <div id="w42"></div> <div id="w43"></div> <div id="w44"></div> <div id="w45"></div><br><br>
+            <div id="w51"></div> <div id="w52"></div> <div id="w53"></div> <div id="w54"></div> <div id="w55"></div>
+        </div><br><br>
+        <div align="center" id="kb">
+            <button type="button" id="q" onclick="wrt('Q',81)">Q</button> <button type="button" id="w" onclick="wrt('W',87)">W</button> <button type="button" id="e" onclick="wrt('E',69)">E</button> <button type="button" id="r" onclick="wrt('R',82)">R</button> <button type="button" id="t" onclick="wrt('T',84)">T</button> <button type="button" id="y" onclick="wrt('Y',89)">Y</button> <button type="button" id="u" onclick="wrt('U',85)">U</button> <button type="button" id="i" onclick="wrt('I',73)">I</button> <button type="button" id="o" onclick="wrt('O',79)">O</button> <button type="button" id="p" onclick="wrt('P',80)">P</button><br><br>
+            <button type="button" id="a" onclick="wrt('A',65)">A</button> <button type="button" id="s" onclick="wrt('S',83)">S</button> <button type="button" id="d" onclick="wrt('D',68)">D</button> <button type="button" id="f" onclick="wrt('F',70)">F</button> <button type="button" id="g" onclick="wrt('G',71)">G</button> <button type="button" id="h" onclick="wrt('H',72)">H</button> <button type="button" id="j" onclick="wrt('J',74)">J</button> <button type="button" id="k" onclick="wrt('K',75)">K</button> <button type="button" id="l" onclick="wrt('L',76)">L</button><br><br>
+            <button type="button" id="bks" onclick="clr()">BackSpace</button> <button type="button" id="z" onclick="wrt('Z',90)">Z</button> <button type="button" id="x" onclick="wrt('X',88)">X</button> <button type="button" id="c" onclick="wrt('C',67)">C</button> <button type="button" id="v" onclick="wrt('V',86)">V</button> <button type="button" id="b" onclick="wrt('B',66)">B</button> <button type="button" id="n" onclick="wrt('N',78)">N</button> <button type="button" id="m" onclick="wrt('M',77)">M</button> <button type="button" id="enter" onclick="chng()">Enter</button><br>
+        </div><br><br>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 offset-1 col-sm-2">
+                <ul>
+                    <li>Utkarsh Agrawal</li>
+                    <li>+91 9870601702</li>
+                    <li>Utkarshagrawal1906@gmail.com</li>
+                </ul>
+            </div></div></div>
+        </footer>
+    </body>
+</html>
